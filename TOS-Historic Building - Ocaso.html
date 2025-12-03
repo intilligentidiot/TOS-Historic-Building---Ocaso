@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Architectural Scan to BIM for Historic Building | Tesla Outsourcing Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        tesla: {
+                            red: '#BE1E2D', // Approximate brand red
+                            dark: '#1A1A1A',
+                            gray: '#F4F4F4',
+                            text: '#333333'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .image-overlay {
+            background: linear-gradient(0deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #BE1E2D;
+            border-radius: 4px;
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #BE1E2D;
+            transition: width 0.3s;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-tesla-text antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <!-- Logo Proxy -->
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <img src="https://www.teslaoutsourcingservices.com/images/tos-logo.svg" alt="Tesla Outsourcing Services" class="h-10 w-auto">
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center font-medium text-sm">
+                    <a href="#" class="nav-link text-gray-700 hover:text-tesla-red transition">Home</a>
+                    <a href="#" class="nav-link text-gray-700 hover:text-tesla-red transition">Services</a>
+                    <a href="#" class="nav-link text-tesla-red font-bold transition">Portfolio</a>
+                    <a href="#" class="nav-link text-gray-700 hover:text-tesla-red transition">Company</a>
+                    <a href="#" class="bg-tesla-red text-white px-6 py-2.5 rounded-full hover:bg-red-700 transition shadow-lg transform hover:-translate-y-0.5">Contact Us</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button class="text-gray-700 hover:text-tesla-red">
+                        <i class="fas fa-bars fa-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-32 pb-40 lg:pt-48 lg:pb-48 bg-tesla-dark overflow-hidden">
+        <!-- Background Image using one of the portfolio images -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://www.teslaoutsourcingservices.com/images/portfolio/architectural-scan-to-bim-for-heritage-restaurant-revit-model-lod-300.webp" 
+                 alt="Background Scan" 
+                 class="w-full h-full object-cover opacity-40 scale-105 animate-[pulse_10s_ease-in-out_infinite]">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent z-10"></div>
+        
+        <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:w-2/3 animate-fade-in-up">
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="bg-tesla-red text-white text-xs font-bold px-3 py-1 rounded uppercase tracking-wider">Case Study</span>
+                    <span class="text-gray-300 text-sm border-l border-gray-600 pl-3">Heritage Preservation</span>
+                </div>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight font-serif">
+                    Architectural Scan to BIM <br/>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-white">Historic Building - Ocaso</span>
+                </h1>
+                <p class="text-lg text-gray-300 mb-8 font-light max-w-2xl leading-relaxed">
+                    Transforming laser-scan point clouds and high-resolution site photography into a richly detailed digital twin at LOD 300.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#gallery" class="bg-white text-tesla-dark px-8 py-3 rounded shadow-lg font-bold hover:bg-gray-100 transition flex items-center gap-2">
+                        <i class="far fa-images"></i> View Gallery
+                    </a>
+                    <a href="https://www.teslaoutsourcingservices.com/portfolio/architectural-scan-to-bim-for-historic-building.php" class="border border-white/30 text-white px-8 py-3 rounded font-medium hover:bg-white/10 transition backdrop-blur-sm">
+                        Project Details
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Project Stats Bar -->
+    <div class="relative z-30 -mt-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-white rounded shadow-2xl p-8 grid grid-cols-2 md:grid-cols-4 gap-8 divide-x-0 md:divide-x divide-gray-100">
+            <div class="text-center group">
+                <div class="text-tesla-red text-2xl mb-2 group-hover:scale-110 transition duration-300"><i class="fas fa-map-marker-alt"></i></div>
+                <p class="text-xs text-gray-400 uppercase tracking-widest font-bold">Location</p>
+                <p class="text-lg font-bold text-gray-900">Spain</p>
+            </div>
+            <div class="text-center group">
+                <div class="text-tesla-red text-2xl mb-2 group-hover:scale-110 transition duration-300"><i class="fas fa-landmark"></i></div>
+                <p class="text-xs text-gray-400 uppercase tracking-widest font-bold">Building Type</p>
+                <p class="text-lg font-bold text-gray-900">Heritage/Historic</p>
+            </div>
+            <div class="text-center group">
+                <div class="text-tesla-red text-2xl mb-2 group-hover:scale-110 transition duration-300"><i class="fas fa-cube"></i></div>
+                <p class="text-xs text-gray-400 uppercase tracking-widest font-bold">LOD Level</p>
+                <p class="text-lg font-bold text-gray-900">LOD 300</p>
+            </div>
+            <div class="text-center group">
+                <div class="text-tesla-red text-2xl mb-2 group-hover:scale-110 transition duration-300"><i class="fas fa-check-circle"></i></div>
+                <p class="text-xs text-gray-400 uppercase tracking-widest font-bold">Outcome</p>
+                <p class="text-lg font-bold text-gray-900">Digital Twin</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <section id="details" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-12 gap-16">
+            
+            <!-- Narrative -->
+            <div class="lg:col-span-7 space-y-8">
+                <div>
+                    <h2 class="text-3xl font-bold font-serif text-gray-900 mb-6 relative pl-4 border-l-4 border-tesla-red">
+                        Project Overview
+                    </h2>
+                    <p class="text-gray-600 leading-relaxed text-lg mb-6">
+                        Completed an end-to-end Architectural Revit model at LOD 300 for a landmark Spanish heritage complex, transforming laser-scan point clouds and high-resolution site photography into a richly detailed digital twin.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed">
+                        The team replicated ornate façades, interior patio elevations, and clay-tile roof geometry with custom parametric families, resolved point-cloud voids to model structural cores and floor assemblies, and delivered coordinated drawings and BIM data within the agreed schedule despite data gaps.
+                    </p>
+                </div>
+
+                <div class="bg-gray-50 p-8 rounded border border-gray-100">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+                        <i class="fas fa-clipboard-list text-tesla-red"></i> Project Deliverables
+                    </h3>
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <ul class="space-y-3">
+                            <li class="flex items-start text-sm text-gray-700">
+                                <i class="fas fa-check text-tesla-red mt-1 mr-3 text-xs"></i> Architectural Revit model at LOD 300
+                            </li>
+                            <li class="flex items-start text-sm text-gray-700">
+                                <i class="fas fa-check text-tesla-red mt-1 mr-3 text-xs"></i> Front exterior façade detailed modeling
+                            </li>
+                            <li class="flex items-start text-sm text-gray-700">
+                                <i class="fas fa-check text-tesla-red mt-1 mr-3 text-xs"></i> Interior patio façade documentation
+                            </li>
+                            <li class="flex items-start text-sm text-gray-700">
+                                <i class="fas fa-check text-tesla-red mt-1 mr-3 text-xs"></i> Comprehensive roof system modeling
+                            </li>
+                        </ul>
+                        <ul class="space-y-3">
+                            <li class="flex items-start text-sm text-gray-700">
+                                <i class="fas fa-check text-tesla-red mt-1 mr-3 text-xs"></i> Point cloud data processing
+                            </li>
+                            <li class="flex items-start text-sm text-gray-700">
+                                <i class="fas fa-check text-tesla-red mt-1 mr-3 text-xs"></i> Heritage-specific parametric families
+                            </li>
+                            <li class="flex items-start text-sm text-gray-700">
+                                <i class="fas fa-check text-tesla-red mt-1 mr-3 text-xs"></i> As-built condition documentation
+                            </li>
+                            <li class="flex items-start text-sm text-gray-700">
+                                <i class="fas fa-check text-tesla-red mt-1 mr-3 text-xs"></i> Construction drawing coordination
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="lg:col-span-5">
+                <div class="sticky top-28 bg-white p-8 rounded shadow-xl border-t-4 border-tesla-red">
+                    <h3 class="text-lg font-bold text-gray-900 mb-6 font-serif">Project Highlights</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 rounded-full bg-red-50 flex items-center justify-center text-tesla-red font-bold flex-shrink-0">
+                                01
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Custom Geometry</h4>
+                                <p class="text-sm text-gray-600 mt-1">Creation of complex parametric families for non-standard heritage ornamentation.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 rounded-full bg-red-50 flex items-center justify-center text-tesla-red font-bold flex-shrink-0">
+                                02
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Data Resolution</h4>
+                                <p class="text-sm text-gray-600 mt-1">Intelligent interpretation of point cloud voids to ensure structural continuity.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 rounded-full bg-red-50 flex items-center justify-center text-tesla-red font-bold flex-shrink-0">
+                                03
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Historical Accuracy</h4>
+                                <p class="text-sm text-gray-600 mt-1">Precise documentation of "as-built" conditions including weathering and sags.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 pt-8 border-t border-gray-100">
+                        <p class="text-sm text-gray-500 mb-4">Have a similar project?</p>
+                        <a href="#contact" class="block w-full text-center bg-tesla-dark text-white font-bold py-3 rounded hover:bg-black transition">
+                            Request a Quote
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visual Gallery Section -->
+    <section id="gallery" class="bg-gray-900 py-24 relative overflow-hidden">
+        <!-- Decoration -->
+        <div class="absolute top-0 right-0 w-64 h-64 bg-tesla-red rounded-full opacity-5 blur-3xl -mr-32 -mt-32"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-blue-900 rounded-full opacity-10 blur-3xl -ml-32 -mb-32"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white font-serif mb-4">Visual Transformation</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">Witness the transition from raw point cloud data to intelligent BIM models.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Image Card 1 -->
+                <div class="group relative overflow-hidden rounded-lg h-64 shadow-2xl cursor-pointer">
+                    <img src="https://www.teslaoutsourcingservices.com/images/portfolio/architectural-scan-to-bim-for-heritage-restaurant-revit-model.webp" 
+                         alt="Revit Model" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                        <div class="text-center p-4 translate-y-4 group-hover:translate-y-0 transition duration-300">
+                            <span class="text-tesla-red text-xs font-bold uppercase tracking-wider">Output</span>
+                            <h3 class="text-white font-bold text-lg">Detailed Revit Model</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image Card 2 -->
+                <div class="group relative overflow-hidden rounded-lg h-64 shadow-2xl cursor-pointer">
+                    <img src="https://www.teslaoutsourcingservices.com/images/portfolio/architectural-scan-to-bim-for-heritage-restaurant-registered-point-cloud-model.webp" 
+                         alt="Point Cloud" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                        <div class="text-center p-4 translate-y-4 group-hover:translate-y-0 transition duration-300">
+                            <span class="text-tesla-red text-xs font-bold uppercase tracking-wider">Input</span>
+                            <h3 class="text-white font-bold text-lg">Registered Point Cloud</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image Card 3 -->
+                <div class="group relative overflow-hidden rounded-lg h-64 shadow-2xl cursor-pointer">
+                    <img src="https://www.teslaoutsourcingservices.com/images/portfolio/architectural-scan-to-bim-for-heritage-restaurant-registered-point-cloud-model-2.webp" 
+                         alt="Point Cloud Detail" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                        <div class="text-center p-4 translate-y-4 group-hover:translate-y-0 transition duration-300">
+                            <span class="text-tesla-red text-xs font-bold uppercase tracking-wider">Detail</span>
+                            <h3 class="text-white font-bold text-lg">Facade Scan</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image Card 4 -->
+                <div class="group relative overflow-hidden rounded-lg h-64 shadow-2xl cursor-pointer">
+                    <img src="https://www.teslaoutsourcingservices.com/images/portfolio/architectural-scan-to-bim-for-heritage-restaurant-registered-point-cloud-model-3.webp" 
+                         alt="Point Cloud Interior" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                        <div class="text-center p-4 translate-y-4 group-hover:translate-y-0 transition duration-300">
+                            <span class="text-tesla-red text-xs font-bold uppercase tracking-wider">Interior</span>
+                            <h3 class="text-white font-bold text-lg">Patio Scan</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image Card 5 -->
+                <div class="group relative overflow-hidden rounded-lg h-64 shadow-2xl cursor-pointer">
+                    <img src="https://www.teslaoutsourcingservices.com/images/portfolio/architectural-scan-to-bim-for-heritage-restaurant-revit-model-lod-300.webp" 
+                         alt="LOD 300 Model" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                        <div class="text-center p-4 translate-y-4 group-hover:translate-y-0 transition duration-300">
+                            <span class="text-tesla-red text-xs font-bold uppercase tracking-wider">LOD 300</span>
+                            <h3 class="text-white font-bold text-lg">Full Revit Integration</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image Card 6 -->
+                <div class="group relative overflow-hidden rounded-lg h-64 shadow-2xl cursor-pointer">
+                    <img src="https://www.teslaoutsourcingservices.com/images/portfolio/architectural-scan-to-bim-for-heritage-restaurant-bim-model-lod-300.webp" 
+                         alt="BIM Model Final" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                        <div class="text-center p-4 translate-y-4 group-hover:translate-y-0 transition duration-300">
+                            <span class="text-tesla-red text-xs font-bold uppercase tracking-wider">Result</span>
+                            <h3 class="text-white font-bold text-lg">Ornate Detailing</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Contact Section -->
+    <footer id="contact" class="bg-tesla-dark text-white border-t border-gray-800 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                
+                <!-- Company Info -->
+                <div class="space-y-4">
+                    <img src="https://www.teslaoutsourcingservices.com/images/tos-logo-white.svg" alt="Tesla Outsourcing" class="h-10">
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Leading provider of CAD, BIM, and Mechanical engineering services worldwide.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.linkedin.com/company/tesla-outsourcing-services/" class="text-gray-400 hover:text-white transition"><i class="fab fa-linkedin fa-lg"></i></a>
+                        <a href="https://x.com/teslaoutsource" class="text-gray-400 hover:text-white transition"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="https://www.facebook.com/teslaoutsourcingservices/" class="text-gray-400 hover:text-white transition"><i class="fab fa-facebook fa-lg"></i></a>
+                        <a href="https://www.instagram.com/teslaos/" class="text-gray-400 hover:text-white transition"><i class="fab fa-instagram fa-lg"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6 font-serif">Quick Links</h4>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-tesla-red transition">About Us</a></li>
+                        <li><a href="#" class="hover:text-tesla-red transition">Portfolio</a></li>
+                        <li><a href="#" class="hover:text-tesla-red transition">Blog</a></li>
+                        <li><a href="#" class="hover:text-tesla-red transition">Pricing Model</a></li>
+                        <li><a href="#" class="hover:text-tesla-red transition">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Map/Global -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6 font-serif">We Serve Globally</h4>
+                    <div class="grid grid-cols-4 gap-2 opacity-50">
+                        <!-- Simulated Flags/Map Grid -->
+                        <img src="https://www.teslaoutsourcingservices.com/images/flags/usa.svg" class="h-8 w-auto">
+                        <img src="https://www.teslaoutsourcingservices.com/images/flags/uk.svg" class="h-8 w-auto">
+                        <img src="https://www.teslaoutsourcingservices.com/images/flags/canada.svg" class="h-8 w-auto">
+                        <img src="https://www.teslaoutsourcingservices.com/images/flags/australia.svg" class="h-8 w-auto">
+                    </div>
+                    <p class="text-xs text-gray-500 mt-4">Serving clients in 20+ countries across the globe.</p>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+                <p>&copy; Tesla Outsourcing Services LLC. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
